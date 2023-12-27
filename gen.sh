@@ -4,7 +4,7 @@
 directory_path="image"
 
 # 输出文件路径
-output_file="output.yaml"
+output_file="layouts.yaml"
 
 # 清空输出文件内容
 echo "" > $output_file

@@ -26,12 +26,12 @@ echo "suite:" >> $output_file
 
 
 # 遍历目录下的文件，生成suite内容
-nft_id=1
+token_id=1
 for file_path in $directory_path/*; do
-  file_name=$(basename $file_path)
-  echo "  - nft_id: $nft_id" >> $output_file
-  echo "    file_name: '$file_name'" >> $output_file
-  echo "    nft_trait:" >> $output_file
+  image_uri=$(basename $file_path)
+  echo "  - token_id: $token_id" >> $output_file
+  echo "    image_uri: '$image_uri'" >> $output_file
+  echo "    token_trait:" >> $output_file
   echo "      - trait_type: a" >> $output_file
   echo "        display_type: string" >> $output_file
   echo "        value: foo" >> $output_file
@@ -41,7 +41,7 @@ for file_path in $directory_path/*; do
   echo "      - trait_type: c" >> $output_file
   echo "        display_type: string" >> $output_file
   echo "        value: zee" >> $output_file
-  ((nft_id++))
+  ((token_id++))
 done
 
 echo "Generated suites in $output_file"
